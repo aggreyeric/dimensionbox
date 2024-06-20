@@ -1,6 +1,7 @@
 import pyspark
 from delta import *
-
+import os
+BASE_LAKE_PATH = r"C:\Users\Jengo\Desktop\notes_md\Data_Engineering\projectsproto\end_end_projects\dimensionbox\spark-warehouse"
 
    
 def getspark():
@@ -12,22 +13,10 @@ def getspark():
 
 
 
-def return_table_view(spark, table_name):
-    data = spark.read.table(table_name)
-    data.createOrReplaceTempView("v_"+ table_name)
+def return_table_view(spark,table_name, base_path=BASE_LAKE_PATH):
+    path_ = os.path.join(base_path, table_name)
+    data = spark.read.format("delta").load(path_)
+    return data
+  
     
 
-# with stg_address as (
-#     select *
-#     from {{ ref('address') }}
-# ),
-
-# stg_stateprovince as (
-#     select *
-#     from {{ ref('stateprovince') }}
-# ),
-
-# stg_countryregion as (
-#     select *
-#     from {{ ref('countryregion') }}
-# )

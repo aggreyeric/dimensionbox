@@ -1,10 +1,12 @@
 # todos
 
-# save all as tables 
-# create dimensions
-# create facts 
-# load to database 
+# save all as tables X
+# create dimensions  X
+# create facts       X
+# load to database   X
 # connect to power BI
+
+URL <>  STORE <> BUILD FACTS AND DIMENSIONS <> LOAD TO DATABASE (duckdb, postgres)
 
 
 Data from this DBT project

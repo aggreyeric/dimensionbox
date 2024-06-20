@@ -5,3 +5,15 @@ https://github.com/Data-Engineer-Camp/dbt-dimensional-modelling/tree/main
 
 
 https://automacaodedados.substack.com/p/metabase-and-postgresql-with-docker
+
+https://www.databricks.com/blog/2022/08/08/identity-columns-to-generate-surrogate-keys-are-now-available-in-a-lakehouse-near-you.html
+
+
+https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrame.join.html
+
+https://medium.com/plumbersofdatascience/exploring-the-different-join-types-in-spark-sql-a-step-by-step-guide-49342ffe9578
+
+https://medium.com/@ghoshsiddharth25/apache-spark-join-strategies-deep-dive-26bf7e85db28
+
+
+https://medium.com/@deepa.account/pyspark-generating-incremental-number-2d4438fcca4e

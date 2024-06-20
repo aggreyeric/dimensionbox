@@ -1,27 +1,28 @@
-from libs.utils import getspark,return_table_view
+from libs.utils import getspark, return_table_view, BASE_LAKE_PATH
 from libs.logging import Log4j
-
+from pyspark.sql.functions import monotonically_increasing_id, col
 
 
 spark = getspark()
-logger =  Log4j(spark)
+spark.sparkContext.setLogLevel("ALL")
+logger = Log4j(spark)
 
 
-return_table_view(spark, "default.address")
+address_DF = return_table_view(spark, table_name="address")
+stateprovince_DF = return_table_view(spark, table_name="stateprovince")
+stateprovince_DF = stateprovince_DF.withColumnRenamed("name", "state_name")
+countryregion_DF = return_table_view(spark, table_name="countryregion")
+countryregion_DF =countryregion_DF.withColumnRenamed("name", "country_name")
 
 
-spark.sql("select * from v_address").show()
+
+address_dim = address_DF.join(
+    stateprovince_DF, address_DF.stateprovinceid == stateprovince_DF.stateprovinceid
+).join(
+    countryregion_DF,
+    stateprovince_DF.countryregioncode == countryregion_DF.countryregioncode,
+).withColumn("address_key", monotonically_increasing_id()).select(col("address_key"), col("addressid"),col("city").alias("city_name"), col("state_name"), col("country_name"))
 
 
+address_dim.write.format('delta').mode("overwrite").saveAsTable("dim_address")
 
-
-
-# select
-#     {{ dbt_utils.generate_surrogate_key(['stg_address.addressid']) }} as address_key,
-#     stg_address.addressid,
-#     stg_address.city as city_name,
-#     stg_stateprovince.name as state_name,
-#     stg_countryregion.name as country_name
-# from stg_address
-# left join stg_stateprovince on stg_address.stateprovinceid = stg_stateprovince.stateprovinceid
-# left join stg_countryregion on stg_stateprovince.countryregioncode = stg_countryregion.countryregioncode
