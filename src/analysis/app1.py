@@ -3,6 +3,6 @@ from os import path
 
 spark = getspark() 
 
-df = spark.read.format("delta").option("header", True).load(path.join(LAKE_URL, "dim_address"))
+df = spark.read.format("delta").option("header", True).load(path.join(LAKE_URL, "dim_date"))
 
 df.show()
