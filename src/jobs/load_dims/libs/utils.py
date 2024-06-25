@@ -1,8 +1,7 @@
 import pyspark
 from delta import *
 import os
-BASE_LAKE_PATH = r"C:\Users\Jengo\Desktop\notes_md\Data_Engineering\projectsproto\end_end_projects\dimensionbox\spark-warehouse"
-
+BASE_LAKE_PATH = r"C:\Users\Ubong\Desktop\spark_stuff\project\dimensionbox\spark-warehouse"
    
 def getspark():
     builder = pyspark.sql.SparkSession.builder.appName("loadData") \

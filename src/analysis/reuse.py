@@ -10,4 +10,4 @@ def getspark():
 
 
 
-LAKE_URL = r"C:\Users\Jengo\Desktop\notes_md\Data_Engineering\projectsproto\end_end_projects\dimensionbox\spark-warehouse"
+LAKE_URL = r"C:\Users\Ubong\Desktop\spark_stuff\project\dimensionbox\spark-warehouse"

@@ -4,7 +4,7 @@ from pyspark.sql.functions import monotonically_increasing_id, col
 
 
 spark = getspark()
-spark.sparkContext.setLogLevel("ALL")
+# spark.sparkContext.setLogLevel("ALL")
 logger = Log4j(spark)
 
 
