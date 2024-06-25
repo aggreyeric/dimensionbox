@@ -7,7 +7,9 @@ spark = getspark()
 logger = Log4j(spark)
 
 
-date_DF = return_table_view(spark, table_name="date")
+date_DF = return_table_view(spark, table_name="date", base_path=BASE_LAKE_PATH)
+
+date_DF.show()
 
 
 

@@ -1,15 +1,15 @@
-from libs.utils import getspark, return_table_view
-from libs.logging import Log4j
+from libs.utils import getspark, return_table_view,BASE_LAKE_PATH
 from pyspark.sql.functions import concat_ws, col, monotonically_increasing_id
-
 
 spark = getspark()
 logger = Log4j(spark)
 
 
-person_DF = return_table_view(spark, table_name="person")
-customer_DF = return_table_view(spark, table_name="customer")
-store_DF = return_table_view(spark, table_name="store")
+
+
+person_DF = return_table_view(spark, table_name="person", base_path=BASE_LAKE_PATH)
+customer_DF = return_table_view(spark, table_name="customer", base_path=BASE_LAKE_PATH)
+store_DF = return_table_view(spark, table_name="store", base_path=BASE_LAKE_PATH)
 
 
 person_DF = person_DF.select(concat_ws(" ",person_DF.firstname, person_DF.lastname).alias("fullname"), person_DF.businessentityid)

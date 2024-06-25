@@ -10,7 +10,7 @@ import os
 spark = getspark()
 logger =  Log4j(spark)
 
-BASE_PATH = r"C:\Users\Ubong\Desktop\spark_stuff\project\dimensionbox\src\data\raw"
+BASE_PATH = r"C:\Users\Jengo\Desktop\notes_md\Data_Engineering\projectsproto\end_end_projects\dimensionbox\src\data\raw"
 list_paths = os.listdir(BASE_PATH)
 
 for path_ in list_paths:
