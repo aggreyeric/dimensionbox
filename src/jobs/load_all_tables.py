@@ -1,5 +1,5 @@
 from delta import *
-from libs.utils import getext, getspark
+from libs.utils import getext, getspark, RAW_DATA_PATH, BASE_LAKE_PATH
 from libs.logging import Log4j
 import os
 
@@ -8,16 +8,18 @@ import os
 
 
 spark = getspark()
+spark.sparkContext.setLogLevel("WARN")
 logger =  Log4j(spark)
 
-BASE_PATH = r"C:\Users\Jengo\Desktop\notes_md\Data_Engineering\projectsproto\end_end_projects\dimensionbox\src\data\raw"
-list_paths = os.listdir(BASE_PATH)
+
+list_paths = os.listdir(RAW_DATA_PATH)
 
 for path_ in list_paths:
     file_info = getext(path_)
     try:
-        data = spark.read.format(file_info[1]).option("header", "true").load(os.path.join(BASE_PATH, path_))
-        data.write.format("delta").mode("overwrite").saveAsTable(file_info[0])
+        data = spark.read.format(file_info[1]).option("header", "true").load(os.path.join(RAW_DATA_PATH, path_))
+        data.show()
+        data.write.format("delta").mode("overwrite").save(os.path.join(BASE_LAKE_PATH, file_info[0]))
         logger.info(f"Table {file_info[0]} was loaded succesfully")
         
     except:

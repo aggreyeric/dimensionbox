@@ -1,3 +1,4 @@
+import os
 from libs.utils import getspark, return_table_view, BASE_LAKE_PATH
 from libs.logging import Log4j
 from pyspark.sql.functions import monotonically_increasing_id
@@ -19,7 +20,7 @@ date_dim = date_DF.withColumn("date_key", monotonically_increasing_id())
 
 
 
-date_dim.write.format('delta').mode("overwrite").saveAsTable("dim_date")
+date_dim.write.format('delta').mode("overwrite").save(os.path.join(BASE_LAKE_PATH,"dim_date" ))
 
 
 

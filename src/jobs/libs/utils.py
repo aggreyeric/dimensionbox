@@ -8,7 +8,8 @@ import re
 
 load_dotenv(dotenv_path=os.path.join(os.path.dirname(os.path.dirname(__file__)),".env.conf"))
 
-BASE_LAKE_PATH= os.getenv('BASE_PATH')
+BASE_LAKE_PATH= os.getenv('BASE_LAKE_PATH')
+RAW_DATA_PATH = os.getenv("RAW_DATA_PATH")
 # BASE_LAKE_PATH = r"C:\Users\Ubong\Desktop\spark_stuff\project\dimensionbox\spark-warehouse"
    
 def getspark():

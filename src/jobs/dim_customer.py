@@ -1,3 +1,5 @@
+import os
+from libs.logging import Log4j
 from libs.utils import getspark, return_table_view,BASE_LAKE_PATH
 from pyspark.sql.functions import concat_ws, col, monotonically_increasing_id
 
@@ -31,7 +33,7 @@ customers_dim = customer_DF.join(person_DF, customer_DF.personid == person_DF.bu
 
 
 
-customers_dim.write.format('delta').mode("overwrite").saveAsTable("dim_customers")
+customers_dim.write.format('delta').mode("overwrite").save(os.path.join(BASE_LAKE_PATH,"dim_customers"))
 
 
 

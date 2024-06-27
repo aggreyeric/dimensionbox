@@ -1,11 +1,16 @@
 # todos
 
 - [X]  save all as tables
-- [] dotenv configuration
-- [] create dimensions  
-- [] create facts
-- [] load to database   X
-- [] connect to power BI
+- [X] dotenv configuration
+- [🚀] understand dimension Modelling
+- [X] create dimensions  
+- [ ] create facts
+- [ ] docker basics and docker compose
+- [ ] load to database   X
+- [ ] orchestrate with Airflow
+- [ ] create dashboard
+- [ ] load initial data to database
+
 
 <!-- URL <>  STORE <> BUILD FACTS AND DIMENSIONS <> LOAD TO DATABASE (duckdb, postgres) -->
 
