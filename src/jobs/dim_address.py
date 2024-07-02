@@ -1,4 +1,4 @@
-from libs.utils import getspark, return_table_view, BASE_LAKE_PATH
+from libs.utils import getspark, return_table_view, BASE_LAKE_PATH, hash_sha256_udf
 from libs.logging import Log4j
 from pyspark.sql.functions import monotonically_increasing_id, col
 import os
@@ -21,7 +21,7 @@ address_dim = address_DF.join(
 ).join(
     countryregion_DF,
     stateprovince_DF.countryregioncode == countryregion_DF.countryregioncode,
-).withColumn("address_key", monotonically_increasing_id()).select(col("address_key"), col("addressid"),col("city").alias("city_name"), col("state_name"), col("country_name"))
+).withColumn("address_key", hash_sha256_udf(col("addressid"))).select(col("address_key"),col("city").alias("city_name"), col("state_name"), col("country_name"))
 
 
 address_dim.write.format('delta').mode("overwrite").save(os.path.join(BASE_LAKE_PATH,"dim_address"))

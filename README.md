@@ -5,12 +5,17 @@
 - [🚀] understand dimension Modelling
 - [X] create dimensions  
 - [ ] create facts
-- [ ] docker basics and docker compose
-- [ ] load to database   X
+- [ ] docker basics and docker compose and docker networking
+- [ ] Create project data compose
+- [ ] load to database   
 - [ ] orchestrate with Airflow
-- [ ] create dashboard
+- [ ] create dashboard metabase/superset/powerbi
 - [ ] load initial data to database
-
+- [ ] generate our own OLTP dummy schema
+- [ ] build dimension model based on new data
+- [ ] build fact model based on new data
+- [ ] create dashboard based on new data
+- [ ] DONE
 
 <!-- URL <>  STORE <> BUILD FACTS AND DIMENSIONS <> LOAD TO DATABASE (duckdb, postgres) -->
 

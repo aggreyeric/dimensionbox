@@ -1,9 +1,16 @@
 import pyspark
+from pyspark.sql.functions import udf
 from delta import *
 import os
 from dotenv import load_dotenv
 import re
+import hashlib
 
+
+def hash_sha256(str_to_hash):
+    return hashlib.sha256(str_to_hash.encode()).hexdigest()
+
+hash_sha256_udf = udf(lambda x: hash_sha256(x))
 
 
 load_dotenv(dotenv_path=os.path.join(os.path.dirname(os.path.dirname(__file__)),".env.conf"))

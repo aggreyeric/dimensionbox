@@ -1,6 +1,6 @@
 import os
 from libs.logging import Log4j
-from libs.utils import getspark, return_table_view,BASE_LAKE_PATH
+from libs.utils import getspark, return_table_view,BASE_LAKE_PATH,hash_sha256_udf
 from pyspark.sql.functions import concat_ws, col, monotonically_increasing_id
 
 spark = getspark()
@@ -27,8 +27,8 @@ store_DF = store_DF.select( (store_DF.businessentityid).alias("storebusinessenti
 
 customers_dim = customer_DF.join(person_DF, customer_DF.personid == person_DF.businessentityid).join(
     store_DF, customer_DF.storeid == store_DF.storebusinessentityid).select(
-        col("customerid"),col("businessentityid"),col("storename"),col("fullname"),col("storebusinessentityid")
-    ).withColumn("customer_key", monotonically_increasing_id())
+    col("customerid"),   col("businessentityid"),col("storename"),col("fullname"),col("storebusinessentityid")
+    ).withColumn("customer_key",hash_sha256_udf("customerid")).drop("customerid")
 
 
 
