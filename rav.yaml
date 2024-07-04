@@ -1,0 +1,4 @@
+scripts:
+    load_all: spark-submit  ./src/jobs/load_all_tables.py
+    load_dim_address: spark-submit  ./src/jobs/dim_address.py
+       

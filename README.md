@@ -2,12 +2,13 @@
 
 - [X]  save all as tables
 - [X] dotenv configuration
-- [🚀] understand dimension Modelling
 - [X] create dimensions  
-- [ ] create facts
+- [X] create facts
 - [ ] docker basics and docker compose and docker networking
+- [X] PULL AND RUN MYSQL
+- [🚀] understand dimension Modelling
 - [ ] Create project data compose
-- [ ] load to database   
+- [ ] load to database
 - [ ] orchestrate with Airflow
 - [ ] create dashboard metabase/superset/powerbi
 - [ ] load initial data to database
@@ -16,6 +17,14 @@
 - [ ] build fact model based on new data
 - [ ] create dashboard based on new data
 - [ ] DONE
+
+## Issues
+
+- [X]  fact_sales not writing delta format  opted to use parquet
+  
+<!-- ALTER TABLE <table_name> SET TBLPROPERTIES ( 'delta.columnMapping.mode' = 'name', 'delta.minReaderVersion' = '2', 'delta.minWriterVersion' = '5') -->
+- []  rav and spark submit not working
+
 
 <!-- URL <>  STORE <> BUILD FACTS AND DIMENSIONS <> LOAD TO DATABASE (duckdb, postgres) -->
 

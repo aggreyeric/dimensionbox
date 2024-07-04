@@ -1,5 +1,5 @@
-from libs.utils import getspark, return_table_view, BASE_LAKE_PATH, hash_sha256_udf
-from libs.logging import Log4j
+from utils.funcs import getspark, return_table_view, BASE_LAKE_PATH, hash_sha256_udf
+from utils.logging import Log4j
 from pyspark.sql.functions import monotonically_increasing_id, col
 import os
 

@@ -1,4 +1,6 @@
-from libs.utils import BASE_LAKE_PATH, RAW_DATA_PATH, hash_sha256
+# from libs.utils import BASE_LAKE_PATH, RAW_DATA_PATH, hash_sha256
+from fact_sales import BASE_LAKE_PATH,  RAW_DATA_PATH, hash_sha256_udf, hash_sha256
+
 print(f"BASE_LAKE_PATH : {BASE_LAKE_PATH}  ")
 print(f"RAW_DATA_PATH : {RAW_DATA_PATH}  ")
 

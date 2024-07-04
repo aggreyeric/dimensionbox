@@ -1,6 +1,6 @@
 from delta import *
-from libs.utils import getext, getspark, RAW_DATA_PATH, BASE_LAKE_PATH
-from libs.logging import Log4j
+from utils.funcs import getext, getspark, RAW_DATA_PATH, BASE_LAKE_PATH
+from utils.logging import Log4j
 import os
 
 

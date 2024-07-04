@@ -1,6 +1,6 @@
 import os
-from libs.logging import Log4j
-from libs.utils import getspark, return_table_view,BASE_LAKE_PATH,hash_sha256_udf
+from utils.logging import Log4j
+from utils.funcs import getspark, return_table_view,BASE_LAKE_PATH,hash_sha256_udf
 from pyspark.sql.functions import concat_ws, col, monotonically_increasing_id
 
 spark = getspark()
