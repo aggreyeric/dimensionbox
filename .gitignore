@@ -1,3 +1,7 @@
 \venv
-\spark-warehouse
+\lakehouse
 *.pyc 
+*\spark-warehouse
+*.conf
+\src\jobs\.env.conf
+src/jobs/.env.conf
