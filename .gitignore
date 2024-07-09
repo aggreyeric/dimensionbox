@@ -5,3 +5,4 @@
 *.conf
 \src\jobs\.env.conf
 src/jobs/.env.conf
+notes_todos/containerization/docker_examples/posgresdk/data/pgdata/*
