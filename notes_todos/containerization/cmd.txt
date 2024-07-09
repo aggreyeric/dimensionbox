@@ -1,2 +1,0 @@
-docker run --name uber_mysql -e MYSQL_ROOT_PASSWORD=dbpassword -e MYSQL_USER=dbuser -e MYSQL_PASSWORD=dbpassword -d mysql:latest
-docker run --name uber_mysql2 -e MYSQL_ROOT_PASSWORD=dbpassword -e MYSQL_USER=dbuser -e MYSQL_PASSWORD=dbpassword -p 33061:3306 -d mysql:latest

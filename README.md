@@ -4,10 +4,12 @@
 - [X] dotenv configuration
 - [X] create dimensions  
 - [X] create facts
-- [ ] docker basics and docker compose and docker networking
-- [X] PULL AND RUN MYSQL
+- [X] docker basics
+- [ ] docker examples
+- [ ] docker compose 
+- [ ] docker networking
 - [🚀] understand dimension Modelling
-- [ ] Create project data compose
+- [ ] Create project docker compose
 - [ ] load to database
 - [ ] orchestrate with Airflow
 - [ ] create dashboard metabase/superset/powerbi
