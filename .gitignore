@@ -6,3 +6,5 @@
 \src\jobs\.env.conf
 src/jobs/.env.conf
 notes_todos/containerization/docker_examples/posgresdk/data/pgdata/*
+notes_todos/containerization/spark_pg_airflow/data/*
+notes_todos/containerization/spark_pg_airflow/airflow_data/*
