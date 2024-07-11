@@ -80,7 +80,7 @@ DATABASES = {
         'NAME': 'datab',
         'USER': 'dbuser',
         'PASSWORD': 'postgres',
-        'HOST': '172.19.0.2',
+        'HOST': 'postgres',
         'PORT': '5432',
     }}
 

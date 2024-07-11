@@ -5,9 +5,8 @@
 - [X] create dimensions  
 - [X] create facts
 - [X] docker basics
-- [ ] docker examples
-- [ ] docker compose 
-- [ ] docker networking
+- [X] docker compose 
+- [X] docker networking
 - [🚀] understand dimension Modelling
 - [ ] Create project docker compose
 - [ ] load to database

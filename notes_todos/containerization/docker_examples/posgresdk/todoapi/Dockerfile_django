@@ -1,6 +1,0 @@
-FROM python:3.9
-WORKDIR /todoapi
-COPY . /todoapi
-RUN pip install django psycopg2 django-ninja
-EXPOSE 8000
-CMD ["python", "manage.py", "runserver","0.0.0.0:8000"]    

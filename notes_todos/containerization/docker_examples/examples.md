@@ -2,7 +2,7 @@
 
 - dockerize postgres with Django application  ***
 - dockerize nextjs and postgres **
-- dockerize spark master and worker with spark-submit  ***
+- dockerize spark master and worker with spark-submit  and postgres***
 - dockerize kafka **
 - dockerize aiflow and spark and minio  ******
 
